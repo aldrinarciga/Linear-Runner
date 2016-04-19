@@ -42,7 +42,7 @@ public class GameScreen extends Screen {
             entityManager.addEntity(new Ground(x));
         }
         //For Player
-        entityManager.addEntity(new Player(camera));
+        entityManager.addEntity(new Player(entityManager));
         startTime = System.currentTimeMillis();
 
         font = new BitmapFont();

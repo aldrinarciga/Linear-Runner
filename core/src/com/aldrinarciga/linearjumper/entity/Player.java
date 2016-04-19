@@ -4,6 +4,7 @@ import com.aldrinarciga.linearjumper.Game;
 import com.aldrinarciga.linearjumper.MainGame;
 import com.aldrinarciga.linearjumper.TextureManager;
 import com.aldrinarciga.linearjumper.camera.OrthoCamera;
+import com.aldrinarciga.linearjumper.entitymanagers.GameScreenEntityManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -36,8 +37,8 @@ public class Player extends Entity {
     int COL = 5;
     int PLAYER_WIDTH =  TextureManager.PLAYER.getWidth() / COL;
 
-    private OrthoCamera camera;
-    public Player(OrthoCamera camera) {
+    private GameScreenEntityManager entityManager;
+    public Player(GameScreenEntityManager entityManager) {
         super(TextureManager.PLAYER, new Vector2(-(TextureManager.PLAYER.getWidth() / 5), (Ground.GROUND_HEIGHT) + TextureManager.GROUND.getHeight()), new Vector2(5,-5));
         TextureRegion[][] temp = TextureRegion.split(texture, PLAYER_WIDTH, TextureManager.PLAYER.getHeight() / ROW);
         animationFrames = new TextureRegion[ROW*COL];
@@ -48,7 +49,7 @@ public class Player extends Entity {
         }
 
         animation = new Animation(1f/16f, animationFrames);
-        this.camera = camera;
+        this.entityManager = entityManager;
     }
 
     @Override
