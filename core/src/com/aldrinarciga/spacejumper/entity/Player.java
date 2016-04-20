@@ -23,9 +23,9 @@ public class Player extends Entity {
     private static final int MAX_X_2 = 200;
     private static final int DIFF = 22;
     private static final int X_GRAVITY = 150;
-    private static final int Y_GRAVITY = -550;
-    private static final int JUMP_GRAVITY = 650;
-    private static final int JUMP_DIFF = 250;
+    private static final int Y_GRAVITY = -800;
+    private static final int JUMP_GRAVITY = 800;
+    private static final int JUMP_DIFF = 220;
     private int GROUND_HT = ((Ground.GROUND_HEIGHT) + TextureManager.GROUNDTEXT.getHeight()) - DIFF;
     private boolean canJump = true, maxXReached = false;
     private long jumpTime;
