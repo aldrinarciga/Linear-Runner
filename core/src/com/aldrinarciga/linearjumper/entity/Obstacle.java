@@ -39,7 +39,7 @@ public class Obstacle extends Entity {
     @Override
     public void render(SpriteBatch spriteBatch) {
         OBSTACLE_SIZE = isNormal ? NORMAL_SIZE : NON_NORMAL_SIZE;
-        spriteBatch.draw(texture, position.x, position.y + (isNormal ? 0 : 10), OBSTACLE_SIZE, OBSTACLE_SIZE);
+        spriteBatch.draw(texture, position.x, position.y + 3, OBSTACLE_SIZE, OBSTACLE_SIZE);
     }
 
     @Override
