@@ -35,4 +35,6 @@ public abstract class EntityManager {
     public abstract void checkCollisions();
 
     public abstract void removeEntity(Entity entity);
+
+    public abstract void dispose();
 }

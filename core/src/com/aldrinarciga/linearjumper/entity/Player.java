@@ -6,6 +6,7 @@ import com.aldrinarciga.linearjumper.TextureManager;
 import com.aldrinarciga.linearjumper.camera.OrthoCamera;
 import com.aldrinarciga.linearjumper.entitymanagers.GameScreenEntityManager;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -27,7 +28,7 @@ public class Player extends Entity {
     private static final int Y_GRAVITY = -550;
     private static final int JUMP_GRAVITY = 650;
     private static final int JUMP_DIFF = 250;
-    private int GROUND_HT = ((Ground.GROUND_HEIGHT) + TextureManager.GROUND.getHeight()) - DIFF;
+    private int GROUND_HT = ((Ground.GROUND_HEIGHT) + TextureManager.GROUNDTEXT.getHeight()) - DIFF;
     private boolean canJump = true, maxXReached = false;
     private long jumpTime;
 
@@ -35,12 +36,12 @@ public class Player extends Entity {
     int ctr = 0;
     int ROW = 2;
     int COL = 5;
-    int PLAYER_WIDTH =  TextureManager.PLAYER.getWidth() / COL;
+    int PLAYER_WIDTH =  TextureManager.PLAYERTEXT.getWidth() / COL;
 
     private GameScreenEntityManager entityManager;
     public Player(GameScreenEntityManager entityManager) {
-        super(TextureManager.PLAYER, new Vector2(-(TextureManager.PLAYER.getWidth() / 5), (Ground.GROUND_HEIGHT) + TextureManager.GROUND.getHeight()), new Vector2(5,-5));
-        TextureRegion[][] temp = TextureRegion.split(texture, PLAYER_WIDTH, TextureManager.PLAYER.getHeight() / ROW);
+        super(new Texture(TextureManager.PLAYER), new Vector2(-(TextureManager.PLAYERTEXT.getWidth() / 5), (Ground.GROUND_HEIGHT) + TextureManager.GROUNDTEXT.getHeight()), new Vector2(5,-5));
+        TextureRegion[][] temp = TextureRegion.split(texture, PLAYER_WIDTH, TextureManager.PLAYERTEXT.getHeight() / ROW);
         animationFrames = new TextureRegion[ROW*COL];
         for(int x = 0; x < ROW; x++){
             for(int y = 0 ; y < COL; y++) {
@@ -62,7 +63,7 @@ public class Player extends Entity {
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle(position.x, position.y, PLAYER_WIDTH, TextureManager.PLAYER.getHeight() / ROW);
+        return new Rectangle(position.x, position.y, PLAYER_WIDTH, texture.getHeight() / ROW);
     }
 
     @Override

@@ -20,6 +20,11 @@ public class GameScreenEntityManager extends EntityManager {
 
     public boolean gameOver = false;
     private BitmapFont font = new BitmapFont();
+    public static boolean hasNotNormal;
+
+    public GameScreenEntityManager(){
+        hasNotNormal = false;
+    }
 
     @Override
     public void checkCollisions() {
@@ -41,6 +46,7 @@ public class GameScreenEntityManager extends EntityManager {
             checkCollisions();
         }
         if(Gdx.input.justTouched() && gameOver){
+            dispose();
             ScreenManager.setScreen(new MenuScreen());
         }
     }
@@ -82,5 +88,13 @@ public class GameScreenEntityManager extends EntityManager {
             }
         }
         return player;
+    }
+
+    public void dispose(){
+        for(Entity entity : entities){
+            if(!(entity instanceof Player)){
+                entity.dispose();
+            }
+        }
     }
 }

@@ -25,6 +25,10 @@ public abstract class Entity {
     public abstract void handleInput();
     public abstract void update();
 
+    public void dispose(){
+        texture.dispose();
+    }
+
     public void render(SpriteBatch spriteBatch){
         spriteBatch.draw(texture, position.x, position.y);
     }

@@ -20,12 +20,12 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class GameScreen extends Screen {
 
-    public static final int NUM_GROUNDS = 10;
+    public static final int NUM_GROUNDS = 4;
 
     private OrthoCamera camera;
     private GameScreenEntityManager entityManager;
     private long startTime;
-    private int GROUND_HT = ((Ground.GROUND_HEIGHT) + TextureManager.GROUND.getHeight());
+    private int GROUND_HT = ((Ground.GROUND_HEIGHT) + TextureManager.GROUNDTEXT.getHeight());
 
     private BitmapFont font;
 
@@ -57,13 +57,14 @@ public class GameScreen extends Screen {
         camera.resize();
         entityManager.update();
 
-        if(System.currentTimeMillis() - startTime > 1000 && entityManager.getObstacles().size < 5){
-            entityManager.addEntity(new Obstacle(Obstacle.randomizeObstacle(),new Vector2(MainGame.WIDTH * (entityManager.getObstacles().size + 1), GROUND_HT - 5), entityManager, false));
-        }
-
-        if(System.currentTimeMillis() % 2 == 0){
+        if(System.currentTimeMillis() - startTime > 1000 && entityManager.getObstacles().size < 3){
             entityManager.addEntity(new Obstacle(Obstacle.randomizeObstacle(),new Vector2(MainGame.WIDTH * (entityManager.getObstacles().size + 1), GROUND_HT - 5), entityManager, true));
         }
+
+        /*if(System.currentTimeMillis() % 2 == 0 && !GameScreenEntityManager.hasNotNormal){
+            entityManager.addEntity(new Obstacle(Obstacle.randomizeObstacle(),new Vector2(MainGame.WIDTH * (entityManager.getObstacles().size + 1), GROUND_HT - 5), entityManager, false));
+            GameScreenEntityManager.hasNotNormal = true;
+        }*/
     }
 
     @Override
@@ -84,6 +85,7 @@ public class GameScreen extends Screen {
     @Override
     public void dispose() {
         font.dispose();
+        entityManager.dispose();
     }
 
     @Override

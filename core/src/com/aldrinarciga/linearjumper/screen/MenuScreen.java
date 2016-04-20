@@ -16,7 +16,7 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class MenuScreen extends Screen {
 
-    public static final int NUM_GROUNDS = 10;
+    public static final int NUM_GROUNDS = 4;
 
     private OrthoCamera camera;
     private MenuScreenEntityManager entityManager;
@@ -57,7 +57,7 @@ public class MenuScreen extends Screen {
 
     @Override
     public void dispose() {
-
+        entityManager.dispose();
     }
 
     @Override

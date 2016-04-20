@@ -2,6 +2,7 @@ package com.aldrinarciga.linearjumper.entity;
 
 import com.aldrinarciga.linearjumper.MainGame;
 import com.aldrinarciga.linearjumper.TextureManager;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -9,7 +10,7 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class GameBg extends Entity{
     public GameBg(Vector2 position) {
-        super(TextureManager.BG, position, new Vector2(-1, 0));
+        super(new Texture(TextureManager.BG), position, new Vector2(-1, 0));
     }
 
     @Override

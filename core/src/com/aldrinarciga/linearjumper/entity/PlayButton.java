@@ -6,6 +6,7 @@ import com.aldrinarciga.linearjumper.camera.OrthoCamera;
 import com.aldrinarciga.linearjumper.screen.GameScreen;
 import com.aldrinarciga.linearjumper.screen.ScreenManager;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
@@ -19,7 +20,7 @@ public class PlayButton extends Entity {
     private OrthoCamera camera;
 
     public PlayButton(OrthoCamera camera) {
-        super(TextureManager.PLAY_BUTTON, new Vector2((MainGame.WIDTH / 2) - TextureManager.PLAY_BUTTON.getWidth() / 2, MainGame.HEIGHT / 2), new Vector2(0,0));
+        super(new Texture(TextureManager.PLAY_BUTTON), new Vector2((MainGame.WIDTH / 2) - TextureManager.PLAY_BUTTONTEXT.getWidth() / 2, MainGame.HEIGHT / 2), new Vector2(0,0));
         this.camera = camera;
     }
 

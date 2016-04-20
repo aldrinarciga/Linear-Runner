@@ -15,4 +15,11 @@ public class MenuScreenEntityManager extends EntityManager {
     public void removeEntity(Entity entity) {
 
     }
+
+    @Override
+    public void dispose() {
+        for(Entity entity : entities){
+            entity.dispose();
+        }
+    }
 }
