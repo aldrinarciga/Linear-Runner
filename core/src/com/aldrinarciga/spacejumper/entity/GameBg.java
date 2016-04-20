@@ -1,7 +1,7 @@
-package com.aldrinarciga.linearjumper.entity;
+package com.aldrinarciga.spacejumper.entity;
 
-import com.aldrinarciga.linearjumper.MainGame;
-import com.aldrinarciga.linearjumper.TextureManager;
+import com.aldrinarciga.spacejumper.MainGame;
+import com.aldrinarciga.spacejumper.TextureManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 

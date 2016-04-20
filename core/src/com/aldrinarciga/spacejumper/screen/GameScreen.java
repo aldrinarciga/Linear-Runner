@@ -1,16 +1,15 @@
-package com.aldrinarciga.linearjumper.screen;
+package com.aldrinarciga.spacejumper.screen;
 
-import com.aldrinarciga.linearjumper.Game;
-import com.aldrinarciga.linearjumper.MainGame;
-import com.aldrinarciga.linearjumper.TextureManager;
-import com.aldrinarciga.linearjumper.camera.OrthoCamera;
-import com.aldrinarciga.linearjumper.entity.GameBg;
-import com.aldrinarciga.linearjumper.entity.Ground;
-import com.aldrinarciga.linearjumper.entity.Obstacle;
-import com.aldrinarciga.linearjumper.entity.Player;
-import com.aldrinarciga.linearjumper.entitymanagers.GameScreenEntityManager;
+import com.aldrinarciga.spacejumper.Game;
+import com.aldrinarciga.spacejumper.MainGame;
+import com.aldrinarciga.spacejumper.TextureManager;
+import com.aldrinarciga.spacejumper.camera.OrthoCamera;
+import com.aldrinarciga.spacejumper.entity.GameBg;
+import com.aldrinarciga.spacejumper.entity.Ground;
+import com.aldrinarciga.spacejumper.entity.Obstacle;
+import com.aldrinarciga.spacejumper.entity.Player;
+import com.aldrinarciga.spacejumper.entitymanagers.GameScreenEntityManager;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;

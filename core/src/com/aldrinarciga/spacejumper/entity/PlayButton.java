@@ -1,10 +1,10 @@
-package com.aldrinarciga.linearjumper.entity;
+package com.aldrinarciga.spacejumper.entity;
 
-import com.aldrinarciga.linearjumper.MainGame;
-import com.aldrinarciga.linearjumper.TextureManager;
-import com.aldrinarciga.linearjumper.camera.OrthoCamera;
-import com.aldrinarciga.linearjumper.screen.GameScreen;
-import com.aldrinarciga.linearjumper.screen.ScreenManager;
+import com.aldrinarciga.spacejumper.MainGame;
+import com.aldrinarciga.spacejumper.TextureManager;
+import com.aldrinarciga.spacejumper.camera.OrthoCamera;
+import com.aldrinarciga.spacejumper.screen.GameScreen;
+import com.aldrinarciga.spacejumper.screen.ScreenManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;

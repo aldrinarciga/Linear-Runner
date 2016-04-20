@@ -1,13 +1,11 @@
-package com.aldrinarciga.linearjumper.screen;
+package com.aldrinarciga.spacejumper.screen;
 
-import com.aldrinarciga.linearjumper.MainGame;
-import com.aldrinarciga.linearjumper.camera.OrthoCamera;
-import com.aldrinarciga.linearjumper.entity.GameBg;
-import com.aldrinarciga.linearjumper.entity.Ground;
-import com.aldrinarciga.linearjumper.entity.PlayButton;
-import com.aldrinarciga.linearjumper.entity.Player;
-import com.aldrinarciga.linearjumper.entitymanagers.MenuScreenEntityManager;
-import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.aldrinarciga.spacejumper.MainGame;
+import com.aldrinarciga.spacejumper.camera.OrthoCamera;
+import com.aldrinarciga.spacejumper.entity.GameBg;
+import com.aldrinarciga.spacejumper.entity.Ground;
+import com.aldrinarciga.spacejumper.entity.PlayButton;
+import com.aldrinarciga.spacejumper.entitymanagers.MenuScreenEntityManager;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 

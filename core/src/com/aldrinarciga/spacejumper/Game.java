@@ -1,4 +1,4 @@
-package com.aldrinarciga.linearjumper;
+package com.aldrinarciga.spacejumper;
 
 /**
  * Created by perpetualwave on 19/04/16.

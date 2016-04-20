@@ -1,4 +1,4 @@
-package com.aldrinarciga.linearjumper;
+package com.aldrinarciga.spacejumper;
 
 import com.badlogic.gdx.graphics.Texture;
 

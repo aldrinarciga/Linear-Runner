@@ -1,12 +1,11 @@
-package com.aldrinarciga.linearjumper.entitymanagers;
+package com.aldrinarciga.spacejumper.entitymanagers;
 
-import com.aldrinarciga.linearjumper.Game;
-import com.aldrinarciga.linearjumper.MainGame;
-import com.aldrinarciga.linearjumper.entity.Entity;
-import com.aldrinarciga.linearjumper.entity.Obstacle;
-import com.aldrinarciga.linearjumper.entity.Player;
-import com.aldrinarciga.linearjumper.screen.MenuScreen;
-import com.aldrinarciga.linearjumper.screen.ScreenManager;
+import com.aldrinarciga.spacejumper.MainGame;
+import com.aldrinarciga.spacejumper.entity.Entity;
+import com.aldrinarciga.spacejumper.entity.Obstacle;
+import com.aldrinarciga.spacejumper.entity.Player;
+import com.aldrinarciga.spacejumper.screen.MenuScreen;
+import com.aldrinarciga.spacejumper.screen.ScreenManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;

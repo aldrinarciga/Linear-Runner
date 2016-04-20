@@ -1,4 +1,4 @@
-package com.aldrinarciga.linearjumper.camera;
+package com.aldrinarciga.spacejumper.camera;
 
 /**
  * Created by perpetualwave on 18/04/16.

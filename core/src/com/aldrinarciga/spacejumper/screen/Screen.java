@@ -1,4 +1,4 @@
-package com.aldrinarciga.linearjumper.screen;
+package com.aldrinarciga.spacejumper.screen;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 

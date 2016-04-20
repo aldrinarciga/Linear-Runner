@@ -1,10 +1,10 @@
-package com.aldrinarciga.linearjumper.camera;
+package com.aldrinarciga.spacejumper.camera;
 
 /**
  * Created by perpetualwave on 18/04/16.
  */
 
-import com.aldrinarciga.linearjumper.MainGame;
+import com.aldrinarciga.spacejumper.MainGame;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector2;

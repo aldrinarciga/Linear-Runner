@@ -1,11 +1,8 @@
-package com.aldrinarciga.linearjumper.entitymanagers;
+package com.aldrinarciga.spacejumper.entitymanagers;
 
-import com.aldrinarciga.linearjumper.entity.Entity;
-import com.aldrinarciga.linearjumper.entity.Obstacle;
+import com.aldrinarciga.spacejumper.entity.Entity;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
-
-import java.util.ArrayList;
 
 /**
  * Created by perpetualwave on 19/04/16.

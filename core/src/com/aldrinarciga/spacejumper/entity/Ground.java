@@ -1,11 +1,9 @@
-package com.aldrinarciga.linearjumper.entity;
+package com.aldrinarciga.spacejumper.entity;
 
-import com.aldrinarciga.linearjumper.TextureManager;
-import com.aldrinarciga.linearjumper.screen.MenuScreen;
+import com.aldrinarciga.spacejumper.TextureManager;
+import com.aldrinarciga.spacejumper.screen.MenuScreen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
-
-import java.util.Random;
 
 /**
  * Created by perpetualwave on 19/04/16.

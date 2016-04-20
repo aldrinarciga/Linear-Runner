@@ -1,6 +1,6 @@
-package com.aldrinarciga.linearjumper.entitymanagers;
+package com.aldrinarciga.spacejumper.entitymanagers;
 
-import com.aldrinarciga.linearjumper.entity.Entity;
+import com.aldrinarciga.spacejumper.entity.Entity;
 
 /**
  * Created by perpetualwave on 19/04/16.

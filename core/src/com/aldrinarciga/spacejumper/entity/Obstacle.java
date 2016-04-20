@@ -1,16 +1,14 @@
-package com.aldrinarciga.linearjumper.entity;
+package com.aldrinarciga.spacejumper.entity;
 
-import com.aldrinarciga.linearjumper.MainGame;
-import com.aldrinarciga.linearjumper.TextureManager;
-import com.aldrinarciga.linearjumper.entitymanagers.GameScreenEntityManager;
+import com.aldrinarciga.spacejumper.MainGame;
+import com.aldrinarciga.spacejumper.TextureManager;
+import com.aldrinarciga.spacejumper.entitymanagers.GameScreenEntityManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 import java.util.Random;
-
-import javax.swing.text.html.ObjectView;
 
 /**
  * Created by perpetualwave on 19/04/16.
