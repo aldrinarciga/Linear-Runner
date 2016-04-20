@@ -44,7 +44,7 @@ public class Obstacle extends Entity {
     public Rectangle getBounds() {
         OBSTACLE_SIZE = isNormal ? NORMAL_SIZE : NON_NORMAL_SIZE;
         int toMinus = 30;
-        return new Rectangle(position.x + toMinus, position.y - (isNormal ? toMinus : 0), OBSTACLE_SIZE - ((isNormal ? toMinus : 0) * 2), OBSTACLE_SIZE - (isNormal ? toMinus : 0));
+        return new Rectangle(position.x + toMinus, position.y - toMinus, OBSTACLE_SIZE - ((isNormal ? toMinus : 5) * 2), OBSTACLE_SIZE - (isNormal ? toMinus : 5));
     }
 
     @Override
