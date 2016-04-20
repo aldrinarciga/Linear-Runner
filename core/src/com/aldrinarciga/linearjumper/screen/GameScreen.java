@@ -58,9 +58,11 @@ public class GameScreen extends Screen {
         entityManager.update();
 
         if(System.currentTimeMillis() - startTime > 1000 && entityManager.getObstacles().size < 5){
-            int rnd = (int) (Math.random() * 2);
-            Texture texture = rnd == 0 ? TextureManager.OBS1 : rnd == 1 ? TextureManager.OBS2: TextureManager.OBS3;
-            entityManager.addEntity(new Obstacle(texture,new Vector2(MainGame.WIDTH * (entityManager.getObstacles().size + 1), GROUND_HT - 5), entityManager));
+            entityManager.addEntity(new Obstacle(Obstacle.randomizeObstacle(),new Vector2(MainGame.WIDTH * (entityManager.getObstacles().size + 1), GROUND_HT - 5), entityManager, false));
+        }
+
+        if(System.currentTimeMillis() % 2 == 0){
+            entityManager.addEntity(new Obstacle(Obstacle.randomizeObstacle(),new Vector2(MainGame.WIDTH * (entityManager.getObstacles().size + 1), GROUND_HT - 5), entityManager, true));
         }
     }
 

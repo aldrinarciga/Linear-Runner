@@ -17,26 +17,33 @@ import javax.swing.text.html.ObjectView;
  */
 public class Obstacle extends Entity {
     private int GROUND_HT = ((Ground.GROUND_HEIGHT) + TextureManager.GROUND.getHeight());
-    private static final int OBSTACLE_SIZE = 100;
+    private static int OBSTACLE_SIZE = 100;
+    private static final int NORMAL_SIZE = 100, NON_NORMAL_SIZE = 40;
     private GameScreenEntityManager entityManager;
+    private boolean isNormal;
 
-    public Obstacle(Texture texture, Vector2 position, GameScreenEntityManager entityManager) {
-        super(texture, position, new Vector2(NORMAL_SPEED, 0));
+    public Obstacle(Texture texture, Vector2 position, GameScreenEntityManager entityManager, boolean isNormal) {
+        super(texture, position, new Vector2(isNormal? NORMAL_SPEED : (float) (NORMAL_SPEED * 1.5), 0));
         this.entityManager = entityManager;
         if((new Random()).nextInt() % 2 == 0){
-            int rnd = (int) (Math.random() * 2);
-            Texture t = rnd == 0 ? TextureManager.OBS1 : rnd == 1 ? TextureManager.OBS2: TextureManager.OBS3;
-            entityManager.addEntity(new Obstacle(t,new Vector2(position.x + (texture.getWidth()* (rnd + 5)), GROUND_HT - 5), entityManager));
+            int rnd = (int) (Math.random() * 7) + 4;
+            entityManager.addEntity(new Obstacle(randomizeObstacle(),new Vector2(position.x + (texture.getWidth()* (rnd + 4)), GROUND_HT - 5), entityManager, rnd%2 == 0));
         }
+        if(!isNormal){
+            this.texture = new Texture("hedge.png");
+        }
+        this.isNormal = isNormal;
     }
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        spriteBatch.draw(texture, position.x, position.y, OBSTACLE_SIZE, OBSTACLE_SIZE);
+        OBSTACLE_SIZE = isNormal ? NORMAL_SIZE : NON_NORMAL_SIZE;
+        spriteBatch.draw(texture, position.x, position.y + (isNormal ? 0 : 10), OBSTACLE_SIZE, OBSTACLE_SIZE);
     }
 
     @Override
     public Rectangle getBounds() {
+        OBSTACLE_SIZE = isNormal ? NORMAL_SIZE : NON_NORMAL_SIZE;
         int toMinus = 30;
         return new Rectangle(position.x + toMinus, position.y - toMinus, OBSTACLE_SIZE - (toMinus * 2), OBSTACLE_SIZE - toMinus);
     }
@@ -51,9 +58,12 @@ public class Obstacle extends Entity {
         position.add(direction);
         if(position.x < -OBSTACLE_SIZE){
             entityManager.removeEntity(this);
-            int rnd = (int) (Math.random() * 2);
-            Texture texture = rnd == 0 ? TextureManager.OBS1 : rnd == 1 ? TextureManager.OBS2: TextureManager.OBS3;
-            entityManager.addEntity(new Obstacle(texture,new Vector2(MainGame.WIDTH * (entityManager.getObstacles().size + 1), GROUND_HT - 5), entityManager));
+            entityManager.addEntity(new Obstacle(randomizeObstacle(),new Vector2(MainGame.WIDTH * (entityManager.getObstacles().size + 1), GROUND_HT - 5), entityManager, false));
         }
+    }
+
+    public static Texture randomizeObstacle(){
+        int rnd = (int) (Math.random() * 3) + 1;
+        return rnd == 1 ? TextureManager.OBS1 : rnd == 2 ? TextureManager.OBS2: rnd == 3 ? TextureManager.OBS3 : TextureManager.OBS4;
     }
 }
