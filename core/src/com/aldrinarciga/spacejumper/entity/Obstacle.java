@@ -44,7 +44,7 @@ public class Obstacle extends Entity {
     public Rectangle getBounds() {
         OBSTACLE_SIZE = isNormal ? NORMAL_SIZE : NON_NORMAL_SIZE;
         int toMinus = 30;
-        return new Rectangle(position.x + toMinus, position.y - toMinus, OBSTACLE_SIZE - ((isNormal ? toMinus : 5) * 2), OBSTACLE_SIZE - (isNormal ? toMinus : 5));
+        return new Rectangle(position.x + toMinus, position.y - toMinus, OBSTACLE_SIZE - ((isNormal ? toMinus : 20) * 2), OBSTACLE_SIZE - (isNormal ? toMinus : 20));
     }
 
     @Override
@@ -61,11 +61,29 @@ public class Obstacle extends Entity {
             }
             position.x = MainGame.WIDTH * entityManager.getObstacles().size + 250;
 
+            while(hasNearObstacle()){
+                position.x += 600;
+            }
+
             if(!GameScreenEntityManager.hasNotNormal){
                 entityManager.addEntity(new Obstacle(Obstacle.randomizeObstacle(),new Vector2(MainGame.WIDTH * (entityManager.getObstacles().size + 1) + 250, GROUND_HT - 5), entityManager, false));
                 GameScreenEntityManager.hasNotNormal = true;
             }
         }
+    }
+
+    private boolean hasNearObstacle() {
+        for(Entity entity : entityManager.getObstacles()){
+            if(entity instanceof Obstacle){
+                Obstacle obstacle = ((Obstacle) entity);
+                if(obstacle.position.x != position.x){
+                    if(Math.abs(obstacle.position.x - position.x) < 200){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     public static Texture randomizeObstacle(){
